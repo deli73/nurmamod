@@ -12,7 +12,7 @@
 	},
 	"elements": [
 		{
-			"name": "cube",
+			"name": "bottom",
 			"from": [3, 0, 3],
 			"to": [13, 11, 13],
 			"faces": {
@@ -25,7 +25,7 @@
 			}
 		},
 		{
-			"name": "cube",
+			"name": "top",
 			"from": [3, 12, 3],
 			"to": [13, 15, 13],
 			"faces": {
@@ -38,7 +38,7 @@
 			}
 		},
 		{
-			"name": "cube",
+			"name": "mid",
 			"from": [4, 11, 4],
 			"to": [12, 12, 12],
 			"faces": {

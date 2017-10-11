@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "S",
+        "S"
+    ],
+    "key": {
+        "S": {"item": "minecraft:stone_slab", "data":0}
+    },
+    "result":{"item": "nurma:stone_polished", "count":1}
+}

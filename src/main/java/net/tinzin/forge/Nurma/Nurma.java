@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.tinzin.forge.Nurma.blocks.ModBlocks;
 import net.tinzin.forge.Nurma.items.ModItems;
 import net.tinzin.forge.Nurma.proxy.CommonProxy;
@@ -30,6 +31,7 @@ public class Nurma {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         System.out.println(name + " is loading!");
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
 
     @Mod.EventHandler

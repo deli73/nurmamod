@@ -4,11 +4,15 @@ import jline.internal.Nullable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.tinzin.forge.Nurma.GuiHandler;
+import net.tinzin.forge.Nurma.Nurma;
 import net.tinzin.forge.Nurma.blocks.BlockTileEntity;
 
 public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
@@ -26,6 +30,16 @@ public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
     public TileEntityGrinder createTileEntity(World world, IBlockState state) {
         return new TileEntityGrinder();
     }
+
+
+    @Override
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if (!world.isRemote) {
+            player.openGui(Nurma.instance, GuiHandler.GRINDER, world, pos.getX(), pos.getY(), pos.getZ());
+        }
+        return true;
+    }
+
 
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){

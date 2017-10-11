@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "P",
+        "G",
+        "S"
+    ],
+    "key": {
+        "P": {"item": "nurma:stone_polished"},
+        "G": {"item": "minecraft:gravel"},
+        "S": {"item": "minecraft:cobblestone"}
+    },
+    "result":{"item": "nurma:grinder"}
+}
