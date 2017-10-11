@@ -2,6 +2,7 @@ package net.tinzin.forge.Nurma.blocks.tiles;
 
 import jline.internal.Nullable;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -50,5 +51,9 @@ public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
     @Override
     public boolean canPlaceTorchOnTop(IBlockState state, IBlockAccess world, BlockPos pos) {
         return false;
+    }
+
+    public BlockFaceShape getBlockFaceShape(IBlockAccess p_193383_1_, IBlockState p_193383_2_, BlockPos p_193383_3_, EnumFacing p_193383_4_){
+        return BlockFaceShape.MIDDLE_POLE_THICK;
     }
 }
