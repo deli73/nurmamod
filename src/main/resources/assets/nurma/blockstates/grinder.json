@@ -1,0 +1,23 @@
+﻿{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "0": "nurma:grinder/grinder_bottom",
+			"1": "nurma:grinder/grinder_sidebottom",
+			"2": "nurma:grinder/grinder_innerbottom",
+			"3": "nurma:grinder/grinder_innertop",
+			"4": "nurma:grinder/grinder_inner",
+			"5": "nurma:grinder/grinder_sidetop",
+			"6": "nurma:grinder/grinder_top",
+			"particle": "nurma:grinder/grinder_bottom"
+        }
+    },
+    "variants": {
+        "normal": {
+            "model": "nurma:grinder"
+        },
+        "inventory": {
+            "model": "nurma:grinder"
+        }
+    }
+}
