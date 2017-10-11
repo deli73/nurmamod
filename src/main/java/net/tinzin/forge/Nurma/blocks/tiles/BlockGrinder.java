@@ -7,6 +7,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -14,6 +15,7 @@ import net.minecraft.world.World;
 import net.tinzin.forge.Nurma.GuiHandler;
 import net.tinzin.forge.Nurma.Nurma;
 import net.tinzin.forge.Nurma.blocks.BlockTileEntity;
+import net.tinzin.forge.Nurma.sound.SoundRegistrator;
 
 public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
     public BlockGrinder () {
@@ -34,8 +36,15 @@ public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-        if (!world.isRemote) {
-            player.openGui(Nurma.instance, GuiHandler.GRINDER, world, pos.getX(), pos.getY(), pos.getZ());
+        if(side != EnumFacing.UP) {
+            if (!world.isRemote) {
+                player.openGui(Nurma.instance, GuiHandler.GRINDER, world, pos.getX(), pos.getY(), pos.getZ());
+            }
+        }
+        else{
+            if (this.getTileEntity(world,pos).refine(world,pos,player)) {
+
+            }
         }
         return true;
     }
