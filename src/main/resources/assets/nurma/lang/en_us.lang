@@ -2,6 +2,19 @@
 item.tablet_stone.name=Stone Tablet
 item.knife.name=Carving Knife
 
+item.refined_emerald.name=Refined Emerald
+item.refined_diamond.name=Refined Diamond
+item.refined_prismarine.name=Refined Prismarine
+item.refined_quartz.name=Refined Quartz
+
+item.shattered_emerald.name=Shattered Emerald
+item.shattered_diamond.name=Shattered Diamond
+item.glass_shard.name=Glass Shard
+
+item.dust_gold.name=Gold Dust
+
 # Blocks
 tile.stone_polished.name=Polished Stone
-tile.grinder.name=Crystal Grinder
+tile.grinder.name=Grindstone
+#Subtitles
+nurma.subtitle.grind=GRINDING NOISE
