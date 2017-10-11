@@ -1,0 +1,67 @@
+﻿{
+	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
+	"textures": {
+		"0": "nurma:grinder/grinder_bottom",
+		"1": "nurma:grinder/grinder_sidebottom",
+		"2": "nurma:grinder/grinder_innerbottom",
+		"3": "nurma:grinder/grinder_innertop",
+		"4": "nurma:grinder/grinder_inner",
+		"5": "nurma:grinder/grinder_sidetop",
+		"6": "nurma:grinder/grinder_top",
+		"particle": "nurma:grinder/grinder_bottom"
+	},
+	"elements": [
+		{
+			"name": "cube",
+			"from": [3, 0, 3],
+			"to": [13, 11, 13],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 14.5453125, 16],
+					"texture": "#1"
+				},
+				"east": {
+					"uv": [0, 0, 14.5453125, 16],
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [0, 0, 14.5453125, 16],
+					"texture": "#1"
+				},
+				"west": {
+					"uv": [0, 0, 14.5453125, 16],
+					"texture": "#1"
+				},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "cube",
+			"from": [3, 12, 3],
+			"to": [13, 15, 13],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 4.8], "texture": "#5"},
+				"east": {"uv": [0, 0, 16, 4.8], "texture": "#5"},
+				"south": {"uv": [0, 0, 16, 4.8], "texture": "#5"},
+				"west": {"uv": [0, 0, 16, 4.8], "texture": "#5"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#6"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
+			}
+		},
+		{
+			"name": "cube",
+			"from": [4, 11, 4],
+			"to": [12, 12, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 2], "texture": "#4"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#4"},
+				"south": {"uv": [0, 0, 16, 2], "texture": "#4"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#4"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#missing"}
+			}
+		}
+	],
+	"groups": [0, 1, 2]
+}
