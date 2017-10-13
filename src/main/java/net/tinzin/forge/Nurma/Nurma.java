@@ -12,8 +12,11 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 import net.tinzin.forge.Nurma.blocks.ModBlocks;
 import net.tinzin.forge.Nurma.items.ModItems;
+import net.tinzin.forge.Nurma.network.PacketResultSound;
 import net.tinzin.forge.Nurma.proxy.CommonProxy;
 import net.tinzin.forge.Nurma.sound.SoundRegisterListener;
 
@@ -30,11 +33,15 @@ public class Nurma {
     @SidedProxy(serverSide = "net.tinzin.forge.Nurma.proxy.CommonProxy", clientSide = "net.tinzin.forge.Nurma.proxy.ClientProxy")
     public static CommonProxy proxy;
 
+    public static SimpleNetworkWrapper network;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         System.out.println(name + " is loading!");
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
+        network = NetworkRegistry.INSTANCE.newSimpleChannel(modId);
+        network.registerMessage(new PacketResultSound.Handler(), PacketResultSound.class, 0, Side.CLIENT);
     }
 
     @Mod.EventHandler

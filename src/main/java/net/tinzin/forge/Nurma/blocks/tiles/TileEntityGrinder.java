@@ -18,10 +18,16 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.tinzin.forge.Nurma.Nurma;
 import net.tinzin.forge.Nurma.blocks.ModBlocks;
 import net.tinzin.forge.Nurma.items.ModItems;
+import net.tinzin.forge.Nurma.network.PacketResultSound;
 import net.tinzin.forge.Nurma.sound.SoundRegistrator;
 
 public class TileEntityGrinder extends TileEntity {
@@ -63,27 +69,30 @@ public class TileEntityGrinder extends TileEntity {
     }
 
     boolean refine(World world, BlockPos pos, EntityPlayer player){
-        //TODO fix stuff with network packets!!!!1!
-        success = true;
+        if (world.isRemote) {return false;}
+
+        success = world.rand.nextBoolean();
 
         ItemStack stack = inventory.getStackInSlot(0);
         if (stack.getCount() == 1) {
             for (int i = 0; i < refineMap.length; i++) {
                 if (stack.getItem() == refineMap[i][0]) {
+                    IMessage packet;
                     if (success) {
                         //System.out.println("grind succeeded");
                         inventory.setStackInSlot(0, new ItemStack(refineMap[i][1]));
-                        world.playSound(player,pos, SoundRegistrator.GRIND, SoundCategory.BLOCKS,1F, 1.0F);
+                        packet = new PacketResultSound(pos,true);
                     } else {
                         inventory.setStackInSlot(0, new ItemStack(refineMap[i][2]));
                         if(refineMap[i][1]==refineMap[i][2]){
                             //System.out.println("grind succeeded");
-                            world.playSound(player,pos, SoundRegistrator.GRIND, SoundCategory.BLOCKS,1F, 1.0F);
+                            packet = new PacketResultSound(pos,true);
                         } else{
                             //System.out.println("grind failed");
-                            world.playSound(player,pos, SoundEvents.BLOCK_GLASS_BREAK,SoundCategory.BLOCKS,1F,1F);
+                            packet = new PacketResultSound(pos,false);
                         }
                     }
+                    Nurma.network.sendToAllAround(packet, new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64)); //SENT SOUND PACKET
                     return true;
                 }
             }
