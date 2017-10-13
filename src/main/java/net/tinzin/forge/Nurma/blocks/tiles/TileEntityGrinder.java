@@ -39,7 +39,7 @@ public class TileEntityGrinder extends TileEntity {
             {Items.DIAMOND,                                     ModItems.refinedDiamond,    ModItems.shatteredDiamond},
             {Items.PRISMARINE_CRYSTALS,                         ModItems.refinedPrismarine, Items.AIR},
             {Items.QUARTZ,                                      ModItems.refinedQuartz,     Items.AIR},
-            {Items.END_CRYSTAL,                                 Items.NETHER_STAR,          ModItems.glassShard},
+            //{Items.END_CRYSTAL,                                 Items.NETHER_STAR,          ModItems.glassShard},
             {Item.getItemFromBlock(Blocks.GLASS),               ModItems.glassShard,        ModItems.glassShard},
             {Items.GOLD_NUGGET,                                 ModItems.goldDust,          ModItems.goldDust},
             {Item.getItemFromBlock(ModBlocks.stonePolished),    ModItems.tabletStone,       ModItems.tabletStone}
@@ -68,8 +68,8 @@ public class TileEntityGrinder extends TileEntity {
         return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? (T)inventory : super.getCapability(capability, facing);
     }
 
-    boolean refine(World world, BlockPos pos, EntityPlayer player){
-        if (world.isRemote) {return false;}
+    void refine(World world, BlockPos pos, EntityPlayer player){
+        if (world.isRemote) {return;}
 
         success = world.rand.nextBoolean();
 
@@ -92,11 +92,11 @@ public class TileEntityGrinder extends TileEntity {
                             packet = new PacketResultSound(pos,false);
                         }
                     }
+                    //TODO make sound conditional based on config
                     Nurma.network.sendToAllAround(packet, new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64)); //SENT SOUND PACKET
-                    return true;
+
                 }
             }
         }
-        return false;
     }
 }

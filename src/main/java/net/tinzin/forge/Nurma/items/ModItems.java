@@ -22,7 +22,7 @@ public class ModItems {
     public static ItemBase glassShard = new ItemBase("glass_shard").setCreativeTab(CreativeTabs.MATERIALS);
 
     //misc refined stuff
-    public static ItemBase goldDust = new ItemBase("dust_gold").setCreativeTab(CreativeTabs.MATERIALS);
+    public static ItemBase goldDust = new ItemBase("dust_gold",64,"dustGold").setCreativeTab(CreativeTabs.MATERIALS);
 
     //ink components
     public static ItemBase soot = new ItemBase("soot").setCreativeTab(CreativeTabs.MATERIALS);
@@ -44,6 +44,12 @@ public class ModItems {
     public static void registerModels() {
         for (int i = 0; i < allItems.length ; i++) {
             allItems[i].registerItemModel();
+        }
+    }
+
+    public static void registerOreDict() {
+        for (int i = 0; i < allItems.length ; i++) {
+            allItems[i].initOreDict();
         }
     }
 }

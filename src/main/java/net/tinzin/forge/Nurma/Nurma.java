@@ -47,6 +47,7 @@ public class Nurma {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new SoundRegisterListener());
+        ModItems.registerOreDict(); // register oredict
     }
 
     @Mod.EventHandler
