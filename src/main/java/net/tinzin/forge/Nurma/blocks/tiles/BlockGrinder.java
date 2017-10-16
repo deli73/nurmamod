@@ -42,8 +42,8 @@ public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
             }
         }
         else{
-            if (this.getTileEntity(world,pos).refine(world,pos,player)) {
-
+            if (!world.isRemote) {
+                this.getTileEntity(world,pos).refine(world,pos,player);
             }
         }
         return true;

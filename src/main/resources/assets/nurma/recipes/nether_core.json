@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " G ",
+        "GQG",
+        " G "
+    ],
+    "key": {
+        "G": {"item": "nurma:glass_shard"},
+        "Q": {"item": "nurma:refined_quartz"}
+    },
+    "result":{"item": "nurma:nether_core", "count":1}
+}

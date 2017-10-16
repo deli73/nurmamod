@@ -7,6 +7,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ModItems {
     public static ItemBase tabletStone = new ItemBase("tablet_stone", 16).setCreativeTab(CreativeTabs.MISC);
     public static ItemBase knife = new ToolBase("knife",100,2,(float)-.5);
+    public static ItemBase netherCore = new ItemBase("nether_core",1);
+    public static ItemBase netherCoreCharged = new ItemCharged("nether_core",1);
 
     //refined crystals
     public static ItemBase refinedEmerald = new ItemBase("refined_emerald",1).setCreativeTab(CreativeTabs.MATERIALS);
@@ -20,13 +22,18 @@ public class ModItems {
     public static ItemBase glassShard = new ItemBase("glass_shard").setCreativeTab(CreativeTabs.MATERIALS);
 
     //misc refined stuff
-    public static ItemBase goldDust = new ItemBase("dust_gold").setCreativeTab(CreativeTabs.MATERIALS);
+    public static ItemBase goldDust = new ItemBase("dust_gold",64,"dustGold").setCreativeTab(CreativeTabs.MATERIALS);
+
+    //ink components
+    public static ItemBase soot = new ItemBase("soot").setCreativeTab(CreativeTabs.MATERIALS);
+    public static ItemBase inkstick = new ToolBase("inkstick",100,0,1);
 
     public static ItemBase[] allItems = {tabletStone,
-            knife,
+            knife, netherCore, netherCoreCharged,
             refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz,
             shatteredEmerald, shatteredDiamond, glassShard,
-            goldDust};
+            goldDust,
+            soot, inkstick};
 
     public static void register(IForgeRegistry<Item> registry) {
         for (int i = 0; i < allItems.length ; i++) {
@@ -37,6 +44,12 @@ public class ModItems {
     public static void registerModels() {
         for (int i = 0; i < allItems.length ; i++) {
             allItems[i].registerItemModel();
+        }
+    }
+
+    public static void registerOreDict() {
+        for (int i = 0; i < allItems.length ; i++) {
+            allItems[i].initOreDict();
         }
     }
 }

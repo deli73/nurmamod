@@ -2,6 +2,9 @@
 item.tablet_stone.name=Stone Tablet
 item.knife.name=Carving Knife
 
+item.nether_core.name=Nether Core
+item.nether_core_charged.name=Nether Core (Charged)
+
 item.refined_emerald.name=Refined Emerald
 item.refined_diamond.name=Refined Diamond
 item.refined_prismarine.name=Refined Prismarine

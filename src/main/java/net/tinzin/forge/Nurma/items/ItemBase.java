@@ -3,10 +3,12 @@ package net.tinzin.forge.Nurma.items;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
+import net.minecraftforge.oredict.OreDictionary;
 import net.tinzin.forge.Nurma.*;
 
 public class ItemBase extends Item {
     protected String name;
+    private String oreName;
 
     public ItemBase(String name) {
         this.name = name;
@@ -21,6 +23,11 @@ public class ItemBase extends Item {
         this.maxStackSize = maxStack;
     }
 
+    public ItemBase(String name, int maxStack, String oreDict){
+        this(name,maxStack);
+        this.oreName = oreDict;
+    }
+
     public void registerItemModel() {
         Nurma.proxy.registerItemRenderer(this, 0, name);
     }
@@ -29,5 +36,10 @@ public class ItemBase extends Item {
     public ItemBase setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
+    }
+
+    public void initOreDict() {
+        if(oreName==null){return;}
+        OreDictionary.registerOre(oreName, this);
     }
 }
