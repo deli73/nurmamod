@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma.sound;
+package net.tinzin.forge.nurma.sound;
 
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;

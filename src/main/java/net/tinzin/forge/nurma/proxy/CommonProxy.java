@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma.proxy;
+package net.tinzin.forge.nurma.proxy;
 
 import net.minecraft.item.Item;
 import net.minecraft.util.text.translation.I18n;

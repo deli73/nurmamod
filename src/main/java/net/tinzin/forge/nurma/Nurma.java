@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma;
+package net.tinzin.forge.nurma;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -14,23 +14,23 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
-import net.tinzin.forge.Nurma.blocks.ModBlocks;
-import net.tinzin.forge.Nurma.items.ModItems;
-import net.tinzin.forge.Nurma.network.PacketResultSound;
-import net.tinzin.forge.Nurma.proxy.CommonProxy;
-import net.tinzin.forge.Nurma.sound.SoundRegisterListener;
+import net.tinzin.forge.nurma.blocks.ModBlocks;
+import net.tinzin.forge.nurma.items.ModItems;
+import net.tinzin.forge.nurma.network.PacketResultSound;
+import net.tinzin.forge.nurma.proxy.CommonProxy;
+import net.tinzin.forge.nurma.sound.SoundRegisterListener;
 
 
 @Mod(modid = Nurma.modId, name = Nurma.name, version = Nurma.version)
 public class Nurma {
     public static final String modId = "nurma";
-    public static final String name  = "Nurma";
+    public static final String name  = "nurma";
     public static final String version = "1.0.0";
 
     @Mod.Instance(modId)
     public static Nurma instance;
 
-    @SidedProxy(serverSide = "net.tinzin.forge.Nurma.proxy.CommonProxy", clientSide = "net.tinzin.forge.Nurma.proxy.ClientProxy")
+    @SidedProxy(serverSide = "net.tinzin.forge.nurma.proxy.CommonProxy", clientSide = "net.tinzin.forge.nurma.proxy.ClientProxy")
     public static CommonProxy proxy;
 
     public static SimpleNetworkWrapper network;

@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma.items;
+package net.tinzin.forge.nurma.items;
 
 
 import com.google.common.collect.Multimap;

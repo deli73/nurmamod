@@ -1,8 +1,7 @@
-package net.tinzin.forge.Nurma.network;
+package net.tinzin.forge.nurma.network;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +10,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.tinzin.forge.Nurma.sound.SoundRegistrator;
+import net.tinzin.forge.nurma.sound.SoundRegistrator;
 
 public class PacketResultSound implements IMessage {
     private BlockPos pos;

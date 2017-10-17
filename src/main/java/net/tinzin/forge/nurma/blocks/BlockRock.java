@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma.blocks;
+package net.tinzin.forge.nurma.blocks;
 
 import net.minecraft.block.material.Material;
 

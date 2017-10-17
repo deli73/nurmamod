@@ -1,11 +1,11 @@
-package net.tinzin.forge.Nurma.blocks;
+package net.tinzin.forge.nurma.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
-import net.tinzin.forge.Nurma.blocks.tiles.BlockGrinder;
+import net.tinzin.forge.nurma.blocks.tiles.BlockGrinder;
 
 public class ModBlocks {
 

@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma.blocks.tiles;
+package net.tinzin.forge.nurma.blocks.tiles;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -6,8 +6,8 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
-import net.tinzin.forge.Nurma.Nurma;
-import net.tinzin.forge.Nurma.blocks.ModBlocks;
+import net.tinzin.forge.nurma.Nurma;
+import net.tinzin.forge.nurma.blocks.ModBlocks;
 
 public class GuiGrinder extends GuiContainer {
     private InventoryPlayer playerInv;

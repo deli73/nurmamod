@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma.blocks.tiles;
+package net.tinzin.forge.nurma.blocks.tiles;
 
 import jline.internal.Nullable;
 import net.minecraft.block.material.Material;
@@ -7,15 +7,13 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.tinzin.forge.Nurma.GuiHandler;
-import net.tinzin.forge.Nurma.Nurma;
-import net.tinzin.forge.Nurma.blocks.BlockTileEntity;
-import net.tinzin.forge.Nurma.sound.SoundRegistrator;
+import net.tinzin.forge.nurma.GuiHandler;
+import net.tinzin.forge.nurma.Nurma;
+import net.tinzin.forge.nurma.blocks.BlockTileEntity;
 
 public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
     public BlockGrinder () {

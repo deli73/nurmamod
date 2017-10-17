@@ -1,4 +1,4 @@
-package net.tinzin.forge.Nurma.items;
+package net.tinzin.forge.nurma.items;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;

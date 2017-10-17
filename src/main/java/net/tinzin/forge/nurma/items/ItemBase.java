@@ -1,10 +1,9 @@
-package net.tinzin.forge.Nurma.items;
+package net.tinzin.forge.nurma.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-
 import net.minecraftforge.oredict.OreDictionary;
-import net.tinzin.forge.Nurma.*;
+import net.tinzin.forge.nurma.Nurma;
 
 public class ItemBase extends Item {
     protected String name;

@@ -1,8 +1,8 @@
-package net.tinzin.forge.Nurma.sound;
+package net.tinzin.forge.nurma.sound;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.tinzin.forge.Nurma.Nurma;
+import net.tinzin.forge.nurma.Nurma;
 
 public class SoundRegistrator {
     public static final SoundEvent GRIND = addSoundsToRegistry("grind");

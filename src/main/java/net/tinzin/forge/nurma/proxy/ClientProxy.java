@@ -1,12 +1,10 @@
-package net.tinzin.forge.Nurma.proxy;
+package net.tinzin.forge.nurma.proxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.tinzin.forge.Nurma.Nurma;
-
+import net.tinzin.forge.nurma.Nurma;
 
 public class ClientProxy extends CommonProxy {
     @Override
