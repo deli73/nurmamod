@@ -3,7 +3,7 @@
   "modid": "nurma",
   "name": "Nurma",
   "description": "",
-  "version": "${Nurma.version}",
+  "version": "1",
   "mcversion": "1.12",
   "url": "",
   "updateUrl": "",
