@@ -63,12 +63,13 @@ public class TileEntityGrinder extends TileEntity {
         if (world.isRemote) {return;}
 
         success = world.rand.nextBoolean();
+        IMessage packet;
 
         ItemStack stack = inventory.getStackInSlot(0);
         if (stack.getCount() == 1) {
             for (int i = 0; i < refineMap.length; i++) {
                 if (stack.getItem() == refineMap[i][0]) {
-                    IMessage packet;
+
                     if (success) {
                         //System.out.println("grind succeeded");
                         inventory.setStackInSlot(0, new ItemStack(refineMap[i][1]));
@@ -87,6 +88,11 @@ public class TileEntityGrinder extends TileEntity {
                     Nurma.network.sendToAllAround(packet, new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64)); //SENT SOUND PACKET
 
                 }
+            }
+            if(stack.getItem() == Items.COAL && stack.getMetadata() == 1){
+                inventory.setStackInSlot(0, new ItemStack(ModItems.soot));
+                packet = new PacketResultSound(pos,true);
+                Nurma.network.sendToAllAround(packet, new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64));
             }
         }
     }

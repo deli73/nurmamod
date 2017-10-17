@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "nurma:items/sootdust_gold.json"
+    "layer0": "nurma:items/soot"
   }
 }
