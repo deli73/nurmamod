@@ -11,11 +11,8 @@ public class LightHandler {
 
     @SubscribeEvent
     public static void gatherLights (GatherLightsEvent event) {
-        event.getLightList().clear();
-        System.out.println("boop");
         for (int i = 0; i < lights.size() ; i++) {
             event.getLightList().add(lights.get(i));
-
         }
     }
 }

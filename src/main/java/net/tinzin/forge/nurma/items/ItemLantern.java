@@ -18,6 +18,7 @@ public class ItemLantern extends ItemBase {
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
+        LightHandler.lights.clear();
         if(!isSelected) {return;}
 
         Light light = Light.builder().color(r,g,b).pos(entityIn).radius(13).build();
