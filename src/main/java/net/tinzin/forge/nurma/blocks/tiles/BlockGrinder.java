@@ -19,6 +19,7 @@ public class BlockGrinder extends BlockTileEntity<TileEntityGrinder> {
     public BlockGrinder () {
         super(Material.ROCK, "grinder");
         this.fullBlock = false;
+        this.setCreativeTab(Nurma.creativeTab);
     }
     @Override
     public Class<TileEntityGrinder> getTileEntityClass() {

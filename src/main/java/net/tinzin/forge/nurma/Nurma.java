@@ -35,6 +35,8 @@ public class Nurma {
 
     public static SimpleNetworkWrapper network;
 
+    public static final NurmaTab creativeTab = new NurmaTab();
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         System.out.println(name + " is loading!");
