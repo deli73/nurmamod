@@ -1,0 +1,8 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients":[
+    {"type": "forge:ore_dict", "ore": "egg"},
+    {"item": "nurma:soot"}
+  ],
+  "result":{"item": "nurma:inkstick"}
+}

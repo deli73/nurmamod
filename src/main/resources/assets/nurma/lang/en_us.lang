@@ -16,8 +16,15 @@ item.glass_shard.name=Glass Shard
 
 item.dust_gold.name=Gold Dust
 
+item.soot.name=Soot
+item.inkstick.name=Inkstick
+
 # Blocks
 tile.stone_polished.name=Polished Stone
 tile.grinder.name=Grindstone
+
 #Subtitles
 nurma.subtitle.grind=GRINDING NOISE
+
+#Titles
+itemGroup.nurma=Nurma Manros
