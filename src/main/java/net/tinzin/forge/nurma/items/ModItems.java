@@ -28,12 +28,16 @@ public class ModItems {
     public static ItemBase soot = new ItemBase("soot").setCreativeTab(CreativeTabs.MATERIALS);
     public static ItemBase inkstick = new ToolBase("inkstick",100,0,1);
 
+    //??
+    public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(CreativeTabs.TOOLS);
+
     public static ItemBase[] allItems = {tabletStone,
             knife, netherCore, netherCoreCharged,
             refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz,
             shatteredEmerald, shatteredDiamond, glassShard,
             goldDust,
-            soot, inkstick};
+            soot, inkstick,
+            lantern};
 
     public static void register(IForgeRegistry<Item> registry) {
         for (int i = 0; i < allItems.length ; i++) {

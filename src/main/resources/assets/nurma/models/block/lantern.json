@@ -1,0 +1,10 @@
+{
+  "parent": "block/block",
+  "textures":{},
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [0, 0, 0]
+    }
+  ]
+}

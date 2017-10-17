@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.tinzin.forge.nurma.ModConfig;
 import net.tinzin.forge.nurma.Nurma;
 import net.tinzin.forge.nurma.blocks.ModBlocks;
 import net.tinzin.forge.nurma.items.ModItems;
@@ -83,7 +84,8 @@ public class TileEntityGrinder extends TileEntity {
                             packet = new PacketResultSound(pos,false);
                         }
                     }
-                    //TODO make sound conditional based on config
+
+                    if(!ModConfig.client.sound.other_sounds_on){return;} //don't play sound if sounds are off
                     Nurma.network.sendToAllAround(packet, new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64)); //SENT SOUND PACKET
 
                 }
