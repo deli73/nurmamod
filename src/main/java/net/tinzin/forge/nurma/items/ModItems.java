@@ -29,7 +29,7 @@ public class ModItems {
     public static ItemBase inkstick = new ItemInkstick("inkstick").setCreativeTab(Nurma.creativeTab);
 
     //??
-    public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(Nurma.creativeTab);
+    public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(Nurma.toolsTab);
 
     public static ItemBase[] allItems = {tabletStone,
             knife, netherCore, netherCoreCharged,

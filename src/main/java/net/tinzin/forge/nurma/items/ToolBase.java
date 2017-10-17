@@ -2,7 +2,6 @@ package net.tinzin.forge.nurma.items;
 
 
 import com.google.common.collect.Multimap;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -10,6 +9,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.tinzin.forge.nurma.Nurma;
 
 public class ToolBase extends ItemBase {
     protected float damageVsEntity;
@@ -19,7 +19,7 @@ public class ToolBase extends ItemBase {
         super(name);
         this.maxStackSize = 1;
         this.setMaxDamage(maxDamage);
-        this.setCreativeTab(CreativeTabs.TOOLS);
+        this.setCreativeTab(Nurma.toolsTab);
         this.damageVsEntity = damageVsEntity;
         this.attackSpeed = attackSpeed;
     }

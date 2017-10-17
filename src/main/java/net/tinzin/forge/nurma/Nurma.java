@@ -20,6 +20,8 @@ import net.tinzin.forge.nurma.light.LightHandler;
 import net.tinzin.forge.nurma.network.PacketResultSound;
 import net.tinzin.forge.nurma.proxy.CommonProxy;
 import net.tinzin.forge.nurma.sound.SoundRegisterListener;
+import net.tinzin.forge.nurma.tabs.NurmaTab;
+import net.tinzin.forge.nurma.tabs.ToolTab;
 
 
 @Mod(modid = Nurma.modId, name = Nurma.name, version = Nurma.version)
@@ -37,6 +39,7 @@ public class Nurma {
     public static SimpleNetworkWrapper network;
 
     public static final NurmaTab creativeTab = new NurmaTab();
+    public static final ToolTab toolsTab = new ToolTab();
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
