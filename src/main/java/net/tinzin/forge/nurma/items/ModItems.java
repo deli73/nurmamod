@@ -6,7 +6,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModItems {
     public static ItemBase tabletStone = new ItemBase("tablet_stone", 16).setCreativeTab(CreativeTabs.MISC);
-    public static ItemBase knife = new ToolBase("knife",100,2,(float)-.5);
+    public static ItemBase knife = new ToolBase("knife",100,2,-.5f);
     public static ItemBase netherCore = new ItemBase("nether_core",1);
     public static ItemBase netherCoreCharged = new ItemCharged("nether_core",1);
 
@@ -25,8 +25,8 @@ public class ModItems {
     public static ItemBase goldDust = new ItemBase("dust_gold",64,"dustGold").setCreativeTab(CreativeTabs.MATERIALS);
 
     //ink components
-    public static ItemBase soot = new ItemBase("soot").setCreativeTab(CreativeTabs.MATERIALS);
-    public static ItemBase inkstick = new ToolBase("inkstick",100,0,1);
+    public static ItemBase soot = new ItemBase("soot",64,"dyeBlack").setCreativeTab(CreativeTabs.MATERIALS);
+    public static ItemBase inkstick = new ItemInkstick("inkstick");
 
     public static ItemBase[] allItems = {tabletStone,
             knife, netherCore, netherCoreCharged,
