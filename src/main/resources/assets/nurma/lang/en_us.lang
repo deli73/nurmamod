@@ -19,6 +19,8 @@ item.dust_gold.name=Gold Dust
 item.soot.name=Soot
 item.inkstick.name=Inkstick
 
+item.lantern.name=Crystal Lantern
+
 # Blocks
 tile.stone_polished.name=Polished Stone
 tile.grinder.name=Grindstone
