@@ -27,4 +27,5 @@ tile.grinder.name=Grindstone
 nurma.subtitle.grind=GRINDING NOISE
 
 #Titles
-itemGroup.nurma=Nurma Manros
+itemGroup.nurma=[Nurma Manros]
+itemGroup.nurma_tools=Nurma Tools
