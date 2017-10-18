@@ -19,6 +19,9 @@ public class ModConfig {
             @Config.Comment("Automatable tile sounds")
             @Config.Name("Tile Sounds On")
             public boolean tile_sounds_on = true;
+            @Config.Comment("non-automatable grindstone, etc.")
+            @Config.Name("Other sounds on")
+            public boolean other_sounds_on = true;
         }
     }
 

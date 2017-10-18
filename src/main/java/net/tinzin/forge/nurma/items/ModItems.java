@@ -28,12 +28,16 @@ public class ModItems {
     public static ItemBase soot = new ItemBase("soot",64,"dyeBlack").setCreativeTab(Nurma.creativeTab);
     public static ItemBase inkstick = new ItemInkstick("inkstick").setCreativeTab(Nurma.creativeTab);
 
+    //??
+    public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(Nurma.toolsTab);
+
     public static ItemBase[] allItems = {tabletStone,
             knife, netherCore, netherCoreCharged,
             refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz,
             shatteredEmerald, shatteredDiamond, glassShard,
             goldDust,
-            soot, inkstick};
+            soot, inkstick,
+            lantern};
 
     public static void register(IForgeRegistry<Item> registry) {
         for (int i = 0; i < allItems.length ; i++) {
