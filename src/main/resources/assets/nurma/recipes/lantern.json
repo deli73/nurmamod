@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " N ",
+    "GCG",
+    "NPN"
+  ],
+  "key": {
+    "N": {"type": "forge:ore_dict", "ore": "nuggetIron"},
+    "G": {"type": "forge:ore_dict", "ore": "paneGlass"},
+    "C": {"item": "nurma:refined_prismarine"},
+    "P": {"item": "minecraft:heavy_weighted_pressure_plate"}
+  },
+  "result":{"item": "nurma:lantern"}
+}
