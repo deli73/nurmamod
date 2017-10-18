@@ -15,6 +15,8 @@ public class ItemLantern extends ItemBase {
         super(name, 1);
     }
 
+    //TODO: move light cretion code to something that iterates over players in LightHandler
+
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
