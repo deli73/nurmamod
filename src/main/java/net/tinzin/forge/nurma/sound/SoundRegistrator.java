@@ -6,6 +6,7 @@ import net.tinzin.forge.nurma.Nurma;
 
 public class SoundRegistrator {
     public static final SoundEvent GRIND = addSoundsToRegistry("grind");
+    public static final SoundEvent INK = addSoundsToRegistry("ink_scrape");
 
     private static SoundEvent addSoundsToRegistry(String soundId) {
         ResourceLocation shotSoundLocation = new ResourceLocation(Nurma.modId, soundId);

@@ -24,6 +24,7 @@ item.lantern.name=Crystal Lantern
 # Blocks
 tile.stone_polished.name=Polished Stone
 tile.grinder.name=Grindstone
+tile.inkstone.name=Inkstone
 
 #Subtitles
 nurma.subtitle.grind=GRINDING NOISE

@@ -16,7 +16,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.tinzin.forge.nurma.blocks.ModBlocks;
 import net.tinzin.forge.nurma.items.ModItems;
-import net.tinzin.forge.nurma.light.LightHandler;
 import net.tinzin.forge.nurma.network.PacketResultSound;
 import net.tinzin.forge.nurma.proxy.CommonProxy;
 import net.tinzin.forge.nurma.sound.SoundRegisterListener;
@@ -53,7 +52,7 @@ public class Nurma {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new SoundRegisterListener());
-        MinecraftForge.EVENT_BUS.register(LightHandler.class);
+        //MinecraftForge.EVENT_BUS.register(LightHandler.class);
         ModItems.registerOreDict(); // register oredict
     }
 

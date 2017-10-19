@@ -11,11 +11,13 @@ public class ModBlocks {
 
     public static BlockBase stonePolished = new BlockRock("stone_polished").setCreativeTab(Nurma.creativeTab);
     public static BlockGrinder grinder = new BlockGrinder();
+    public static BlockInkstone inkstone = new BlockInkstone();
 
     public static void register(IForgeRegistry<Block> registry) {
         registry.registerAll(
             stonePolished,
-            grinder
+            grinder,
+            inkstone
         );
         GameRegistry.registerTileEntity(grinder.getTileEntityClass(), grinder.getRegistryName().toString());
     }
@@ -23,12 +25,14 @@ public class ModBlocks {
     public static void registerItemBlocks(IForgeRegistry<Item> registry) {
         registry.registerAll(
             stonePolished.createItemBlock(),
-            grinder.createItemBlock()
+            grinder.createItemBlock(),
+            inkstone.createItemBlock()
         );
     }
 
     public static void registerItemModels() {
         stonePolished.registerItemModel(Item.getItemFromBlock(stonePolished));
         grinder.registerItemModel(Item.getItemFromBlock(grinder));
+        inkstone.registerItemModel(Item.getItemFromBlock(inkstone));
     }
 }
