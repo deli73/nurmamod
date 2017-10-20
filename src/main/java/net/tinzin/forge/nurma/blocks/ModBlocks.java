@@ -13,26 +13,26 @@ public class ModBlocks {
     public static BlockGrinder grinder = new BlockGrinder();
     public static BlockInkstone inkstone = new BlockInkstone();
 
+    public static BlockBase[] allBlocks = {
+            stonePolished, grinder, inkstone
+    };
+
     public static void register(IForgeRegistry<Block> registry) {
-        registry.registerAll(
-            stonePolished,
-            grinder,
-            inkstone
-        );
+        registry.registerAll(allBlocks);
         GameRegistry.registerTileEntity(grinder.getTileEntityClass(), grinder.getRegistryName().toString());
     }
 
     public static void registerItemBlocks(IForgeRegistry<Item> registry) {
-        registry.registerAll(
-            stonePolished.createItemBlock(),
-            grinder.createItemBlock(),
-            inkstone.createItemBlock()
-        );
+        for (int i = 0; i < allBlocks.length; i++) {
+            BlockBase block = allBlocks[i];
+            registry.register(block.createItemBlock());
+        }
     }
 
     public static void registerItemModels() {
-        stonePolished.registerItemModel(Item.getItemFromBlock(stonePolished));
-        grinder.registerItemModel(Item.getItemFromBlock(grinder));
-        inkstone.registerItemModel(Item.getItemFromBlock(inkstone));
+        for (int i = 0; i < allBlocks.length; i++) {
+            BlockBase block = allBlocks[i];
+            block.registerItemModel(Item.getItemFromBlock(block));
+        }
     }
 }

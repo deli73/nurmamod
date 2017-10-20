@@ -3,6 +3,7 @@ package net.tinzin.forge.nurma.items;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.tinzin.forge.nurma.Nurma;
+import net.tinzin.forge.nurma.items.armor.ArmorHelmetCrystal;
 
 public class ModItems {
     public static ItemBase tabletStone = new ItemBase("tablet_stone", 16).setCreativeTab(Nurma.creativeTab);
@@ -31,6 +32,9 @@ public class ModItems {
     //??
     public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(Nurma.toolsTab);
 
+    //armor
+    public static ArmorHelmetCrystal helmetCrystal = new ArmorHelmetCrystal();
+
     public static ItemBase[] allItems = {tabletStone,
             knife, netherCore, netherCoreCharged,
             refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz,
@@ -40,15 +44,15 @@ public class ModItems {
             lantern};
 
     public static void register(IForgeRegistry<Item> registry) {
-        for (int i = 0; i < allItems.length ; i++) {
-            registry.register(allItems[i]);
-        }
+        registry.registerAll(allItems);
+        registry.register(helmetCrystal);
     }
 
     public static void registerModels() {
         for (int i = 0; i < allItems.length ; i++) {
             allItems[i].registerItemModel();
         }
+        helmetCrystal.registerItemModel();
     }
 
     public static void registerOreDict() {

@@ -34,7 +34,7 @@ public class TileEntityGrinder extends TileEntity {
             //{Items.END_CRYSTAL,                                 Items.NETHER_STAR,          ModItems.glassShard},
             {Item.getItemFromBlock(Blocks.GLASS),               ModItems.glassShard,        ModItems.glassShard},
             {Items.GOLD_NUGGET,                                 ModItems.goldDust,          ModItems.goldDust},
-            {Item.getItemFromBlock(ModBlocks.stonePolished),    ModItems.tabletStone,       ModItems.tabletStone}
+            {Item.getItemFromBlock(ModBlocks.stonePolished),    ModItems.tabletStone,       ModItems.tabletStone},
     };
 
     @Override
@@ -93,6 +93,11 @@ public class TileEntityGrinder extends TileEntity {
             }
             if(stack.getItem() == Items.COAL && stack.getMetadata() == 1){
                 inventory.setStackInSlot(0, new ItemStack(ModItems.soot));
+                packet = new PacketResultSound(pos,true);
+                Nurma.network.sendToAllAround(packet, new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64));
+            }
+            if(stack.getItem() ==  Item.getItemFromBlock(Blocks.STONE) && stack.getMetadata() == 5){ // andesite
+                inventory.setStackInSlot(0, new ItemStack(Item.getItemFromBlock(ModBlocks.inkstone)));
                 packet = new PacketResultSound(pos,true);
                 Nurma.network.sendToAllAround(packet, new NetworkRegistry.TargetPoint(world.provider.getDimension(), pos.getX(), pos.getY(), pos.getZ(), 64));
             }
