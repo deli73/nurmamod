@@ -5,6 +5,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.tinzin.forge.nurma.Nurma;
@@ -13,7 +14,7 @@ import net.tinzin.forge.nurma.blocks.tiles.BlockGrinder;
 
 public class ModBlocks {
 
-    public static Fluid fluidCrystal = new Fluid("nurma:crystal",
+    public static Fluid fluidCrystal = new Fluid("crystal",
             new ResourceLocation("nurma", "blocks/fluids/crystal_still"),
             new ResourceLocation("nurma", "blocks/fluids/crystal_flowing"))
             .setDensity(1030) //approximately the density of saltwater
@@ -24,7 +25,7 @@ public class ModBlocks {
     public static BlockGrinder grinder = new BlockGrinder();
     public static BlockInkstone inkstone = new BlockInkstone();
     public static BlockWood crystalwood = new BlockWood("crystal_log");
-    public static BlockCrystalWater crystalwater = new BlockCrystalWater(fluidCrystal,"fluid_crystal");
+    public static BlockCrystalWater crystalwater;
 
     public static IBlockBase[] allBlocks = {
             stonePolished, grinder, inkstone, crystalwood
@@ -36,7 +37,10 @@ public class ModBlocks {
             registry.register(block.toBlock());
         }
         GameRegistry.registerTileEntity(grinder.getTileEntityClass(), grinder.getRegistryName().toString());
-        fluidCrystal.setBlock(ModBlocks.crystalwater);
+        FluidRegistry.registerFluid(ModBlocks.fluidCrystal);
+        BlockCrystalWater crystalwater = new BlockCrystalWater(fluidCrystal,"fluid_crystal");
+        registry.register(crystalwater);
+        fluidCrystal.setBlock(crystalwater);
     }
 
     public static void registerItemBlocks(IForgeRegistry<Item> registry) {
