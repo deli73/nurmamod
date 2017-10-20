@@ -34,7 +34,7 @@ public class TileEntityGrinder extends TileEntity {
             //{Items.END_CRYSTAL,                                 Items.NETHER_STAR,          ModItems.glassShard},
             {Item.getItemFromBlock(Blocks.GLASS),               ModItems.glassShard,        ModItems.glassShard},
             {Items.GOLD_NUGGET,                                 ModItems.goldDust,          ModItems.goldDust},
-            {Item.getItemFromBlock(ModBlocks.stonePolished),    ModItems.tabletStone,       ModItems.tabletStone},
+            {Item.getItemFromBlock(ModBlocks.stonePolished),    ModItems.tabletStone,       ModItems.tabletStone}
     };
 
     @Override
