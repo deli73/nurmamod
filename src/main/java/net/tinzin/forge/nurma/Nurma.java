@@ -50,7 +50,7 @@ public class Nurma {
         network.registerMessage(new PacketResultSound.Handler(), PacketResultSound.class, 0, Side.CLIENT);
 
         FluidRegistry.registerFluid(ModBlocks.fluidCrystal);
-        ModBlocks.fluidCrystal.setBlock(ModBlocks.crystalwater);
+
     }
 
     @Mod.EventHandler

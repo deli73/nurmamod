@@ -36,6 +36,7 @@ public class ModBlocks {
             registry.register(block.toBlock());
         }
         GameRegistry.registerTileEntity(grinder.getTileEntityClass(), grinder.getRegistryName().toString());
+        fluidCrystal.setBlock(ModBlocks.crystalwater);
     }
 
     public static void registerItemBlocks(IForgeRegistry<Item> registry) {
