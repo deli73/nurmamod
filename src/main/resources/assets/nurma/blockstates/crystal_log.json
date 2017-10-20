@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "axis=y":  { "model": "nurma:crystal_log" },
+    "axis=z":   { "model": "nurma:crystal_log", "x": 90 },
+    "axis=x":   { "model": "nurma:crystal_log", "x": 90, "y": 90 },
+    "axis=none": { "model": "nurma:crystal_bark" }
+    "inventory" {
+        "model": "nurma:crystal_log"
+    }
+  }
+}

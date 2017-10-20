@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.tinzin.forge.nurma.Nurma;
 
-public class BlockBase extends Block {
+public class BlockBase extends Block implements IBlockBase{
     protected String name;
 
     public BlockBase(Material material, String name) {
@@ -15,7 +15,7 @@ public class BlockBase extends Block {
 
         this.name = name;
 
-        setUnlocalizedName(name);
+        setUnlocalizedName(Nurma.modId+"."+name);
         setRegistryName(name);
     }
 
@@ -30,6 +30,10 @@ public class BlockBase extends Block {
     @Override
     public BlockBase setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
+        return this;
+    }
+
+    public Block toBlock(){
         return this;
     }
 }

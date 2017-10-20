@@ -1,30 +1,30 @@
 # Items
-item.tablet_stone.name=Stone Tablet
-item.knife.name=Carving Knife
+item.nurma.tablet_stone.name=Stone Tablet
+item.nurma.knife.name=Carving Knife
 
-item.nether_core.name=Nether Core
-item.nether_core_charged.name=Nether Core (Charged)
+item.nurma.nether_core.name=Nether Core
+item.nurma.nether_core_charged.name=Nether Core (Charged)
 
-item.refined_emerald.name=Refined Emerald
-item.refined_diamond.name=Refined Diamond
-item.refined_prismarine.name=Refined Prismarine
-item.refined_quartz.name=Refined Quartz
+item.nurma.refined_emerald.name=Refined Emerald
+item.nurma.refined_diamond.name=Refined Diamond
+item.nurma.refined_prismarine.name=Refined Prismarine
+item.nurma.refined_quartz.name=Refined Quartz
 
-item.shattered_emerald.name=Shattered Emerald
-item.shattered_diamond.name=Shattered Diamond
-item.glass_shard.name=Glass Shard
+itemnurma.shattered_emerald.name=Shattered Emerald
+item.nurma.shattered_diamond.name=Shattered Diamond
+item.nurma.glass_shard.name=Glass Shard
 
-item.dust_gold.name=Gold Dust
+item.nurma.dust_gold.name=Gold Dust
 
-item.soot.name=Soot
-item.inkstick.name=Inkstick
+item.nurma.soot.name=Soot
+item.nurma.inkstick.name=Inkstick
 
-item.lantern.name=Crystal Lantern
+item.nurma.lantern.name=Crystal Lantern
 
 # Blocks
-tile.stone_polished.name=Polished Stone
-tile.grinder.name=Grindstone
-tile.inkstone.name=Inkstone
+tile.nurma.stone_polished.name=Polished Stone
+tile.nurma.grinder.name=Grindstone
+tile.nurma.inkstone.name=Inkstone
 
 #Subtitles
 nurma.subtitle.grind=GRINDING NOISE

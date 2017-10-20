@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "nurma:blocks/log_crystal_top",
+    "side": "nurma:blocks/log_crystal",
+    "particle": "nurma:blocks/log_crystal"
+  }
+}

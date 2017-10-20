@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -47,6 +48,9 @@ public class Nurma {
 
         network = NetworkRegistry.INSTANCE.newSimpleChannel(modId);
         network.registerMessage(new PacketResultSound.Handler(), PacketResultSound.class, 0, Side.CLIENT);
+
+        FluidRegistry.registerFluid(ModBlocks.fluidCrystal);
+        ModBlocks.fluidCrystal.setBlock(ModBlocks.crystalwater);
     }
 
     @Mod.EventHandler
