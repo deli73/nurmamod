@@ -10,7 +10,7 @@ item.nurma.refined_diamond.name=Refined Diamond
 item.nurma.refined_prismarine.name=Refined Prismarine
 item.nurma.refined_quartz.name=Refined Quartz
 
-itemnurma.shattered_emerald.name=Shattered Emerald
+item.nurma.shattered_emerald.name=Shattered Emerald
 item.nurma.shattered_diamond.name=Shattered Diamond
 item.nurma.glass_shard.name=Glass Shard
 
@@ -25,6 +25,13 @@ item.nurma.lantern.name=Crystal Lantern
 tile.nurma.stone_polished.name=Polished Stone
 tile.nurma.grinder.name=Grindstone
 tile.nurma.inkstone.name=Inkstone
+tile.nurma.adorned_stone_emerald=Emerald-Adorned Polished Stone
+tile.nurma.adorned_stone_diamond=Diamond-Adorned Polished Stone
+tile.nurma.adorned_stone_quartz=Quartz-Adorned Polished Stone
+tile.nurma.crystal_log.name=??Crystal Log??
+
+#
+fluid.crystal=Crystalline Fluid
 
 #Subtitles
 nurma.subtitle.grind=GRINDING NOISE
