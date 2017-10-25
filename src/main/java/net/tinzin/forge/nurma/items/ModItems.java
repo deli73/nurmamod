@@ -31,6 +31,7 @@ public class ModItems {
 
     //??
     public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(Nurma.toolsTab);
+    public static ItemBase crystal = new ItemBase("crystal").setCreativeTab(Nurma.creativeTab);
 
     //armor
     public static ArmorHelmetCrystal helmetCrystal = new ArmorHelmetCrystal();
@@ -41,7 +42,7 @@ public class ModItems {
             shatteredEmerald, shatteredDiamond, glassShard,
             goldDust,
             soot, inkstick,
-            lantern};
+            lantern, crystal};
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(allItems);

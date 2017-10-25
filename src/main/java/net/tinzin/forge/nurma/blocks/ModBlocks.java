@@ -1,6 +1,7 @@
 package net.tinzin.forge.nurma.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -22,13 +23,21 @@ public class ModBlocks {
             .setRarity(EnumRarity.EPIC);
 
     public static BlockBase stonePolished = new BlockRock("stone_polished").setCreativeTab(Nurma.creativeTab);
+    public static BlockBase adornedStoneEmerald = new BlockRock("adorned_stone_emerald").setCreativeTab(Nurma.creativeTab);
+    public static BlockBase adornedStoneDiamond = new BlockRock("adorned_stone_diamond").setCreativeTab(Nurma.creativeTab);
+    public static BlockBase adornedStoneQuartz = new BlockRock("adorned_stone_quartz").setCreativeTab(Nurma.creativeTab);
     public static BlockGrinder grinder = new BlockGrinder();
     public static BlockInkstone inkstone = new BlockInkstone();
     public static BlockWood crystalwood = new BlockWood("crystal_log");
     public static BlockCrystalWater crystalwater;
+    public static BlockBase crystalLattice = new BlockBase(Material.GLASS,"crystal_lattice");
+    public static BlockBase lamp = new BlockLight();
 
     public static IBlockBase[] allBlocks = {
-            stonePolished, grinder, inkstone, crystalwood
+            stonePolished,
+            adornedStoneEmerald, adornedStoneDiamond, adornedStoneQuartz,
+            grinder, inkstone, crystalwood, crystalLattice,
+            lamp
     };
 
     public static void register(IForgeRegistry<Block> registry) {
