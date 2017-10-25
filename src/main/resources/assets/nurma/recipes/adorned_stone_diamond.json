@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "S",
+        "C",
+        "S"
+    ],
+    "key": {
+        "S": {"item": "minecraft:stone_slab", "data":0},
+        "C": {"item": "nurma:refined_diamond"}
+    },
+    "result":{"item": "nurma:adorned_stone_diamond", "count":1}
+}
