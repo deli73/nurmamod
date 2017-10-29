@@ -43,10 +43,15 @@ minecraft {
 
 repositories {
     maven { url = "https://repo.elytradev.com/" }
+    maven {
+        name = 'jei'
+        url = 'http://dvs1.progwml6.com/files/maven'
+    }
 }
 
 dependencies {
     compile 'com.elytradev:mirage:2.0.3-rc2-SNAPSHOT'
+    compile 'mezz.jei:jei_1.12:4.7.2.76'
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"

@@ -1,6 +1,7 @@
 package net.tinzin.forge.nurma.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -10,7 +11,12 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import net.tinzin.forge.nurma.Nurma;
+import net.tinzin.forge.nurma.blocks.fluids.BlockCrystalWater;
+import net.tinzin.forge.nurma.items.ModItems;
+
+import java.util.Random;
 
 public class BlockWood extends BlockRotatedPillar implements IBlockBase {
     protected String name;
@@ -58,7 +64,7 @@ public class BlockWood extends BlockRotatedPillar implements IBlockBase {
         while (!reachedBottom){
             height++;
             looking = looking.down();
-            if(world.getBlockState(looking).getBlock() != ModBlocks.crystalwood){
+            if(!(world.getBlockState(looking).getBlock() instanceof BlockWood)){
                 looking = looking.up();
                 reachedBottom = true;
             }
@@ -75,7 +81,7 @@ public class BlockWood extends BlockRotatedPillar implements IBlockBase {
                 looking.west().north()
         };
         for(BlockPos p : surrounding) {
-            if(world.getBlockState(p).getBlock() != ModBlocks.crystalwater){
+            if(!(world.getBlockState(p).getBlock() instanceof BlockCrystalWater)){
                 return false;
             }
         }
@@ -86,5 +92,44 @@ public class BlockWood extends BlockRotatedPillar implements IBlockBase {
 
     public EnumFacing branchDir(IBlockState state, IBlockAccess world, BlockPos pos){
         return NO;
+    }
+
+
+
+    protected boolean isValidPos(IBlockAccess world, BlockPos pos, IBlockState state){
+        if(state.getValue(AXIS).isHorizontal()){
+            //TODO actually check for validity of branches, for now just say they're all fine
+            return true;
+        }
+        BlockPos below = pos.down();
+        IBlockState stateBelow = world.getBlockState(below);
+        if(stateBelow.getBlock() instanceof  BlockWood){
+            BlockWood woodBelow = (BlockWood)stateBelow.getBlock();
+            return woodBelow.canGrowUp(stateBelow,world,below);
+        } else if(stateBelow.getBlock() instanceof BlockAir){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+    {
+        if (!this.isValidPos(worldIn, pos, state))
+        {
+            worldIn.destroyBlock(pos, true);
+        }
+    }
+
+    @Override
+    public int quantityDropped(Random random)
+    {
+        return random.nextInt(5);
+    }
+
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    {
+        return ModItems.crystal;
     }
 }
