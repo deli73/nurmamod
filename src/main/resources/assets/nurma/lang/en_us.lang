@@ -21,14 +21,18 @@ item.nurma.inkstick.name=Inkstick
 
 item.nurma.lantern.name=Crystal Lantern
 
+item.nurma.crystal.name=??Crystal??
+
 # Blocks
 tile.nurma.stone_polished.name=Polished Stone
 tile.nurma.grinder.name=Grindstone
 tile.nurma.inkstone.name=Inkstone
-tile.nurma.adorned_stone_emerald=Emerald-Adorned Polished Stone
-tile.nurma.adorned_stone_diamond=Diamond-Adorned Polished Stone
-tile.nurma.adorned_stone_quartz=Quartz-Adorned Polished Stone
+tile.nurma.adorned_stone_emerald.name=Emerald-Adorned Polished Stone
+tile.nurma.adorned_stone_diamond.name=Diamond-Adorned Polished Stone
+tile.nurma.adorned_stone_quartz.name=Quartz-Adorned Polished Stone
+tile.nurma.lightsource.name=Lamp
 tile.nurma.crystal_log.name=??Crystal Log??
+tile.nurma.crystal_lattice.name=??Crystal Lattice??
 
 #
 fluid.crystal=Crystalline Fluid

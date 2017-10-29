@@ -8,6 +8,6 @@ public class BlockRock extends BlockBase{
         super(Material.ROCK, name);
 
         setHardness(3f);
-        setResistance(5f);
+        setResistance(10f);
     }
 }

@@ -28,10 +28,12 @@ public class ModBlocks {
     public static BlockBase adornedStoneQuartz = new BlockRock("adorned_stone_quartz").setCreativeTab(Nurma.creativeTab);
     public static BlockGrinder grinder = new BlockGrinder();
     public static BlockInkstone inkstone = new BlockInkstone();
+    public static BlockBase lamp = new BlockLight();
+    //crystals!
     public static BlockWood crystalwood = new BlockWood("crystal_log");
     public static BlockCrystalWater crystalwater;
-    public static BlockBase crystalLattice = new BlockBase(Material.GLASS,"crystal_lattice");
-    public static BlockBase lamp = new BlockLight();
+    public static BlockBase crystalLattice = (BlockBase) new BlockBase(Material.GLASS,"crystal_lattice").setHardness(2.5f).setResistance(5f);
+
 
     public static IBlockBase[] allBlocks = {
             stonePolished,

@@ -31,6 +31,8 @@ public class ModItems {
 
     //??
     public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(Nurma.toolsTab);
+
+    //crystals???
     public static ItemBase crystal = new ItemBase("crystal").setCreativeTab(Nurma.creativeTab);
 
     //armor

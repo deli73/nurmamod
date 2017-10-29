@@ -124,7 +124,7 @@ public class BlockWood extends BlockRotatedPillar implements IBlockBase {
     @Override
     public int quantityDropped(Random random)
     {
-        return random.nextInt(5);
+        return random.nextInt(4)+1;  //drops 1-4 crystals
     }
 
     @Override

@@ -1,5 +1,6 @@
 package net.tinzin.forge.nurma.blocks;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -13,6 +14,8 @@ public class BlockLight extends BlockBase {
         super(Material.GLASS, "lightsource");
         this.fullBlock = false;
         this.lightValue = 15;
+        this.setHardness(0.4f);
+        this.blockSoundType = (SoundType.GLASS);
     }
 
     @Override
