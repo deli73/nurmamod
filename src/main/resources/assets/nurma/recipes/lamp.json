@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GGG",
+        "GPG",
+        "GGG"
+    ],
+    "key": {
+        "G": {"item": "minecraft:glowstone_dust"},
+        "P": {"item": "nurma:refined_prismarine"}
+    },
+    "result":{"item": "nurma:lightsource", "count":2}
+}

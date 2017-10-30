@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CCC",
+        "CSC",
+        "CCC"
+    ],
+    "key": {
+        "C": {"item": "nurma:crystal"},
+        "S": {"item": "minecraft:string"}
+    },
+    "result":{"item": "nurma:crystal_lattice", "count":1}
+}
