@@ -10,11 +10,10 @@ item.nurma.refined_diamond.name=Refined Diamond
 item.nurma.refined_prismarine.name=Refined Prismarine
 item.nurma.refined_quartz.name=Refined Quartz
 
-item.nurma.shattered_emerald.name=Shattered Emerald
-item.nurma.shattered_diamond.name=Shattered Diamond
 item.nurma.glass_shard.name=Glass Shard
 
 item.nurma.dust_gold.name=Gold Dust
+item.nurma.dust_lapis.name=Lazurite Dust
 
 item.nurma.soot.name=Soot
 item.nurma.inkstick.name=Inkstick

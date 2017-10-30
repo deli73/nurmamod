@@ -59,6 +59,7 @@ public class ModBlocks {
         BlockCrystalWater crystalwater = new BlockCrystalWater(fluidCrystal,"fluid_crystal");
         registry.register(crystalwater);
         fluidCrystal.setBlock(crystalwater);
+        FluidRegistry.addBucketForFluid(fluidCrystal);
     }
 
     public static void registerItemBlocks(IForgeRegistry<Item> registry) {

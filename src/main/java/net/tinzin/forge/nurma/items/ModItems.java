@@ -16,10 +16,6 @@ public class ModItems {
     public static ItemBase refinedDiamond = new ItemBase("refined_diamond",1).setCreativeTab(Nurma.creativeTab);
     public static ItemBase refinedPrismarine = new ItemBase("refined_prismarine",1).setCreativeTab(Nurma.creativeTab);
     public static ItemBase refinedQuartz = new ItemBase("refined_quartz",1).setCreativeTab(Nurma.creativeTab);
-
-    //failed/repeated refines
-    public static ItemBase shatteredEmerald = new ItemBase("shattered_emerald").setCreativeTab(Nurma.creativeTab);
-    public static ItemBase shatteredDiamond = new ItemBase("shattered_diamond").setCreativeTab(Nurma.creativeTab);
     public static ItemBase glassShard = new ItemBase("glass_shard").setCreativeTab(Nurma.creativeTab);
 
     //misc refined stuff
@@ -41,8 +37,7 @@ public class ModItems {
 
     public static ItemBase[] allItems = {tabletStone,
             knife, netherCore, netherCoreCharged,
-            refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz,
-            shatteredEmerald, shatteredDiamond, glassShard,
+            refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz, glassShard,
             goldDust, lapisDust,
             soot, inkstick,
             lantern, crystal};
