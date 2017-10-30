@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.tinzin.forge.nurma.blocks.ModBlocks;
 import net.tinzin.forge.nurma.items.ModItems;
@@ -22,6 +23,7 @@ import net.tinzin.forge.nurma.proxy.CommonProxy;
 import net.tinzin.forge.nurma.sound.SoundRegisterListener;
 import net.tinzin.forge.nurma.tabs.NurmaTab;
 import net.tinzin.forge.nurma.tabs.ToolTab;
+import net.tinzin.forge.nurma.worldgen.ModWorldGeneration;
 
 
 @Mod(modid = Nurma.modId, name = Nurma.name, version = Nurma.version)
@@ -54,7 +56,7 @@ public class Nurma {
         network = NetworkRegistry.INSTANCE.newSimpleChannel(modId);
         network.registerMessage(new PacketResultSound.Handler(), PacketResultSound.class, 0, Side.CLIENT);
 
-
+        GameRegistry.registerWorldGenerator(new ModWorldGeneration(), 3);
 
     }
 

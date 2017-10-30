@@ -32,14 +32,17 @@ public class ModBlocks {
     //crystals!
     public static BlockWood crystalwood = new BlockWood("crystal_log");
     public static BlockCrystalWater crystalwater;
-    public static BlockBase crystalLattice = (BlockBase) new BlockBase(Material.GLASS,"crystal_lattice").setHardness(2.5f).setResistance(5f);
+    public static BlockBase crystalLattice = (BlockBase) new BlockBase(Material.GLASS,"crystal_lattice").setHardness(2.5f).setResistance(5f).setCreativeTab(Nurma.creativeTab);
+    //
+    public static BlockBase oreFriend = new BlockOreFriend().setCreativeTab(Nurma.creativeTab);
 
 
     public static IBlockBase[] allBlocks = {
             stonePolished,
             adornedStoneEmerald, adornedStoneDiamond, adornedStoneQuartz,
             grinder, inkstone, crystalwood, crystalLattice,
-            lamp
+            lamp,
+            oreFriend
     };
 
     public static void register(IForgeRegistry<Block> registry) {
