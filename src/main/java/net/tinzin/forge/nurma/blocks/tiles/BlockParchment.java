@@ -10,6 +10,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -19,6 +20,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.tinzin.forge.nurma.GuiHandler;
 import net.tinzin.forge.nurma.Nurma;
 import net.tinzin.forge.nurma.blocks.BlockTileEntity;
 
@@ -34,7 +36,8 @@ public class BlockParchment extends BlockTileEntity<TileEntityParchment> {
     public BlockParchment(){
         super(Material.LEAVES, "parchment");
         this.fullBlock = false;
-        this.setSoundType(SoundType.CLOTH);
+        SoundType soundType = new SoundType(1,1, SoundEvents.BLOCK_GRASS_PLACE,SoundEvents.BLOCK_GRASS_STEP,SoundEvents.BLOCK_COMPARATOR_CLICK,SoundEvents.BLOCK_CLOTH_HIT,SoundEvents.BLOCK_GRASS_FALL);
+        this.setSoundType(soundType);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING,EnumFacing.NORTH));
         this.setCreativeTab(Nurma.creativeTab);
     }
@@ -53,6 +56,9 @@ public class BlockParchment extends BlockTileEntity<TileEntityParchment> {
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if(!world.isRemote) {
+            player.openGui(Nurma.instance, GuiHandler.PARCHMENT, world, pos.getX(), pos.getY(), pos.getZ());
+        }
         return true;
     }
 

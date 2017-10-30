@@ -10,12 +10,16 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.0'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin:'java'
+apply plugin: 'com.github.johnrengelman.shadow'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
@@ -49,6 +53,16 @@ repositories {
     }
 }
 
+def concrete_version="0.3.2-SNAPSHOT";
+def concrete_modules=["common","gui"];
+def project_package='net.tinzin.forge.nurma';
+
+shadowJar {
+    classifier = ''
+    relocate 'com.elytradev.concrete', project_package + '.repackage.com.elytradev.concrete'
+    configurations = [project.configurations.shadow]
+}
+
 dependencies {
     compile 'com.elytradev:mirage:2.0.3-rc2-SNAPSHOT'
     compile 'mezz.jei:jei_1.12:4.7.2.76'
@@ -72,7 +86,10 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
+    for (String module : concrete_modules) {
+        shadow 'com.elytradev:concrete:' + concrete_version + ':' + module;
+        compile 'com.elytradev:concrete:' + concrete_version + ':' + module;
+    }
 }
 
 processResources {
