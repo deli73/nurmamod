@@ -18,7 +18,18 @@ import net.tinzin.forge.nurma.sound.SoundRegistrator;
 
 public class TileEntityGrinder extends TileEntity {
     private boolean success;
-    private ItemStackHandler inventory = new ItemStackHandler(1);
+    protected class OneItemHandler extends ItemStackHandler{
+        OneItemHandler(){
+            super(1);
+        }
+        @Override
+        public int getSlotLimit(int slot)
+        {
+            return 1;
+        }
+    }
+
+    private ItemStackHandler inventory = new OneItemHandler();
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {

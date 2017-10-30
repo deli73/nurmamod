@@ -20,12 +20,8 @@ public class Recipes {
         ItemStack[] out = {new ItemStack(ModItems.refinedEmerald),  new ItemStack(ModItems.refinedDiamond), new ItemStack(ModItems.refinedPrismarine),      new ItemStack(ModItems.refinedQuartz),  new ItemStack(ModItems.glassShard)};
         addRecipes(in,out);
 
-            ItemStack lapis = new ItemStack(Items.DYE);
-            lapis.setItemDamage(4);
-            ItemStack charcoal = new ItemStack(Items.COAL);
-            charcoal.setItemDamage(1);
-        Ingredient[] in2= {Ingredient.fromItem(Items.GOLD_NUGGET),  Ingredient.fromStacks(lapis),       Ingredient.fromItem(Item.getItemFromBlock(ModBlocks.stonePolished))};
-        ItemStack[] out2= {new ItemStack(ModItems.goldDust),        new ItemStack(ModItems.lapisDust),  new ItemStack(ModItems.tabletStone)};
+        Ingredient[] in2= {Ingredient.fromItem(Items.GOLD_NUGGET),  Ingredient.fromStacks(new ItemStack(Items.DYE,1,4)),       Ingredient.fromItem(Item.getItemFromBlock(ModBlocks.stonePolished)), Ingredient.fromStacks(new ItemStack(Items.COAL,1,1))};
+        ItemStack[] out2= {new ItemStack(ModItems.goldDust),        new ItemStack(ModItems.lapisDust),                                       new ItemStack(ModItems.tabletStone),                                 new ItemStack(ModItems.soot)};
         addRecipes(in2,out2);
     }
 
@@ -51,10 +47,7 @@ public class Recipes {
     }
 
     public static boolean keyCompare(ItemStack key, Ingredient internal){
-        for(ItemStack s : internal.getMatchingStacks()){
-            if(s.getItem() == key.getItem() && s.getMetadata() == key.getMetadata()){return true;}
-        }
-        return false;
+        return internal.apply(key);
     }
 
     public static ItemStack getOutputFor(ItemStack key){
@@ -63,7 +56,7 @@ public class Recipes {
                 return INSTANCE.recipes.get(i);
             }
         }
-        return ItemStack.EMPTY;
+        return key;
     }
 
 }
