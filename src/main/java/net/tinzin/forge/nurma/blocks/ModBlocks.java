@@ -12,6 +12,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.tinzin.forge.nurma.Nurma;
 import net.tinzin.forge.nurma.blocks.fluids.BlockCrystalWater;
 import net.tinzin.forge.nurma.blocks.tiles.BlockGrinder;
+import net.tinzin.forge.nurma.blocks.tiles.BlockParchment;
 
 public class ModBlocks {
 
@@ -28,6 +29,7 @@ public class ModBlocks {
     public static BlockBase adornedStoneQuartz = new BlockRock("adorned_stone_quartz").setCreativeTab(Nurma.creativeTab);
     public static BlockGrinder grinder = new BlockGrinder();
     public static BlockInkstone inkstone = new BlockInkstone();
+    public static BlockParchment parchment = new BlockParchment();
     public static BlockBase lamp = new BlockLight();
     //crystals!
     public static BlockWood crystalwood = new BlockWood("crystal_log");
@@ -42,7 +44,8 @@ public class ModBlocks {
             adornedStoneEmerald, adornedStoneDiamond, adornedStoneQuartz,
             grinder, inkstone, crystalwood, crystalLattice,
             lamp,
-            oreFriend
+            oreFriend,
+            parchment
     };
 
     public static void register(IForgeRegistry<Block> registry) {
@@ -51,6 +54,7 @@ public class ModBlocks {
             registry.register(block.toBlock());
         }
         GameRegistry.registerTileEntity(grinder.getTileEntityClass(), grinder.getRegistryName().toString());
+        GameRegistry.registerTileEntity(parchment.getTileEntityClass(), parchment.getRegistryName().toString());
         FluidRegistry.registerFluid(ModBlocks.fluidCrystal);
         BlockCrystalWater crystalwater = new BlockCrystalWater(fluidCrystal,"fluid_crystal");
         registry.register(crystalwater);

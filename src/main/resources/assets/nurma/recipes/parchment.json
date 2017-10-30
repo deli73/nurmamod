@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "PPP",
+        "PLP",
+        "PPP"
+    ],
+    "key": {
+        "P": {"item": "minecraft:paper"},
+        "L": {"type": "forge:ore_dict", "ore": "dustLapis"}
+    },
+    "result":{"item": "nurma:parchment", "count":8}
+}

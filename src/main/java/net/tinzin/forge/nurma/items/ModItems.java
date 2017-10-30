@@ -24,6 +24,7 @@ public class ModItems {
 
     //misc refined stuff
     public static ItemBase goldDust = new ItemBase("dust_gold",64,"dustGold").setCreativeTab(Nurma.creativeTab);
+    public static ItemBase lapisDust = new ItemBase("dust_lapis",64,"dustLapis").setCreativeTab(Nurma.creativeTab);
 
     //ink components
     public static ItemBase soot = new ItemBase("soot",64,"dyeBlack").setCreativeTab(Nurma.creativeTab);
@@ -42,7 +43,7 @@ public class ModItems {
             knife, netherCore, netherCoreCharged,
             refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz,
             shatteredEmerald, shatteredDiamond, glassShard,
-            goldDust,
+            goldDust, lapisDust,
             soot, inkstick,
             lantern, crystal};
 

@@ -33,7 +33,8 @@ tile.nurma.adorned_stone_quartz.name=Quartz-Adorned Polished Stone
 tile.nurma.lightsource.name=Lamp
 tile.nurma.crystal_log.name=??Crystal Log??
 tile.nurma.crystal_lattice.name=??Crystal Lattice??
-tile.nurma.friendly_ore=Friend Ore
+tile.nurma.friendly_ore.name=Friend Ore
+tile.nurma.parchment.name=Spell Parchment
 
 #
 fluid.crystal=Crystalline Fluid
