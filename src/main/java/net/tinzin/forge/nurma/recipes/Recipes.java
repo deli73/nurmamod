@@ -20,8 +20,8 @@ public class Recipes {
         ItemStack[] out = {new ItemStack(ModItems.refinedEmerald),  new ItemStack(ModItems.refinedDiamond), new ItemStack(ModItems.refinedPrismarine),      new ItemStack(ModItems.refinedQuartz),  new ItemStack(ModItems.glassShard)};
         addRecipes(in,out);
 
-        Ingredient[] in2= {Ingredient.fromItem(Items.GOLD_NUGGET),  Ingredient.fromStacks(new ItemStack(Items.DYE,1,4)),       Ingredient.fromItem(Item.getItemFromBlock(ModBlocks.stonePolished)), Ingredient.fromStacks(new ItemStack(Items.COAL,1,1))};
-        ItemStack[] out2= {new ItemStack(ModItems.goldDust),        new ItemStack(ModItems.lapisDust),                                       new ItemStack(ModItems.tabletStone),                                 new ItemStack(ModItems.soot)};
+        Ingredient[] in2= {Ingredient.fromItem(Items.GOLD_NUGGET),  Ingredient.fromStacks(new ItemStack(Items.DYE,1,4)),       Ingredient.fromItem(Item.getItemFromBlock(ModBlocks.stonePolished)), Ingredient.fromStacks(new ItemStack(Items.COAL,1,1)), Ingredient.fromStacks(new ItemStack(Item.getItemFromBlock(Blocks.STONE),1,5))};
+        ItemStack[] out2= {new ItemStack(ModItems.goldDust),        new ItemStack(ModItems.lapisDust),                                       new ItemStack(ModItems.tabletStone),                                 new ItemStack(ModItems.soot),                                       new ItemStack(Item.getItemFromBlock(ModBlocks.inkstone))};
         addRecipes(in2,out2);
     }
 
