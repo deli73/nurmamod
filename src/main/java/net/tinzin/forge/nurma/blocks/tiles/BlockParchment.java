@@ -11,6 +11,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -23,6 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.tinzin.forge.nurma.GuiHandler;
 import net.tinzin.forge.nurma.Nurma;
 import net.tinzin.forge.nurma.blocks.BlockTileEntity;
+import net.tinzin.forge.nurma.items.ModItems;
 
 public class BlockParchment extends BlockTileEntity<TileEntityParchment> {
 
@@ -56,10 +58,16 @@ public class BlockParchment extends BlockTileEntity<TileEntityParchment> {
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-        if(!world.isRemote) {
-            player.openGui(Nurma.instance, GuiHandler.PARCHMENT, world, pos.getX(), pos.getY(), pos.getZ());
+        ItemStack held = player.getHeldItem(hand);
+        if(held.getItem() == ModItems.brush && held.getMetadata() == 1){
+            held.setItemDamage(0);
+            player.setHeldItem(hand, held);
+            if(!world.isRemote) {
+                player.openGui(Nurma.instance, GuiHandler.PARCHMENT, world, pos.getX(), pos.getY(), pos.getZ());
+            }
+            return true;
         }
-        return true;
+        return false;
     }
 
     @Override

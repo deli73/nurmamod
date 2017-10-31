@@ -87,6 +87,9 @@ public class BlockInkstone extends BlockRock {
             //SOUND
             world.playSound(hitX,hitY,hitZ, SoundRegistrator.INK, SoundCategory.PLAYERS,1f,1f,true);
         }
+        if(state.getValue(INK) && held.getItem() == ModItems.brush && held.getMetadata() == 0){
+            held.setItemDamage(1); // put ink on brush!!
+        }
         return true;
     }
 

@@ -25,6 +25,8 @@ public class ModItems {
     //ink components
     public static ItemBase soot = new ItemBase("soot",64,"dyeBlack").setCreativeTab(Nurma.creativeTab);
     public static ItemBase inkstick = new ItemInkstick("inkstick").setCreativeTab(Nurma.creativeTab);
+    public static ItemBase brush = new ItemBrush().setCreativeTab(Nurma.toolsTab);
+    public static ItemBase scroll = new ItemScroll();
 
     //??
     public static ItemBase lantern = new ItemLantern("lantern").setCreativeTab(Nurma.toolsTab);
@@ -39,7 +41,7 @@ public class ModItems {
             knife, netherCore, netherCoreCharged,
             refinedEmerald, refinedDiamond, refinedPrismarine, refinedQuartz, glassShard,
             goldDust, lapisDust,
-            soot, inkstick,
+            soot, inkstick, brush, scroll,
             lantern, crystal};
 
     public static void register(IForgeRegistry<Item> registry) {

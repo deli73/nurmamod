@@ -88,7 +88,6 @@ public class Nurma {
 
         @SubscribeEvent
         public static void registerBlocks(RegistryEvent.Register<Block> event) {
-
             ModBlocks.register(event.getRegistry());
         }
     }
