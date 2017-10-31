@@ -2,8 +2,12 @@ package net.tinzin.forge.nurma;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.loot.*;
+import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -65,6 +69,8 @@ public class Nurma {
         MinecraftForge.EVENT_BUS.register(new SoundRegisterListener());
         //MinecraftForge.EVENT_BUS.register(LightHandler.class);
         ModItems.registerOreDict(); // register oredict
+
+        LootTableList.register(new ResourceLocation(modId,"soot"));
     }
 
     @Mod.EventHandler
@@ -89,6 +95,21 @@ public class Nurma {
         @SubscribeEvent
         public static void registerBlocks(RegistryEvent.Register<Block> event) {
             ModBlocks.register(event.getRegistry());
+        }
+        @SubscribeEvent
+        public static void lootTables(LootTableLoadEvent event){
+            if(event.getName().equals(LootTableList.ENTITIES_BLAZE)){
+                ResourceLocation soot = new ResourceLocation(modId,"inject/soot");
+                LootEntry entry = new LootEntryTable(soot, 1, 0, new LootCondition[]{}, "inject/soot");
+                LootPool pool = new LootPool(new LootEntry[] {entry}, new LootCondition[]{}, new RandomValueRange(1,1), new RandomValueRange(0,1), "inject/soot");
+                event.getTable().addPool(pool);
+            }
+            if (event.getName().toString().equals(LootTableList.CHESTS_SIMPLE_DUNGEON)) {
+                ResourceLocation soot = new ResourceLocation(modId,"inject/simple_dungeon");
+                LootEntry entry = new LootEntryTable(soot, 1, 0, new LootCondition[]{}, "inject/simple_dungeon");
+                LootPool pool = new LootPool(new LootEntry[] {entry}, new LootCondition[]{}, new RandomValueRange(0,1), new RandomValueRange(0,1), "inject/simple_dungeon");
+                event.getTable().addPool(pool);
+            }
         }
     }
 }
