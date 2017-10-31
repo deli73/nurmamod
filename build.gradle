@@ -53,7 +53,7 @@ repositories {
     }
 }
 
-def concrete_version="0.3.2-SNAPSHOT";
+def concrete_version="0.3.3-SNAPSHOT";
 def concrete_modules=["common","gui"];
 def project_package='net.tinzin.forge.nurma';
 
