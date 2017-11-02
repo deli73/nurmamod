@@ -24,6 +24,13 @@ item.nurma.lantern.name=Crystal Lantern
 
 item.nurma.crystal.name=??Crystal??
 
+#  horsehair
+item.nurma.horsehair.white.name=White Horsehair
+item.nurma.horsehair.creamy.name=Creamy Horsehair
+item.nurma.horsehair.chestnut.name=Chestnut Horsehair
+item.nurma.horsehair.brown.name=Brown Horsehair
+item.nurma.horsehair.black.name=Black Horsehair
+
 # Blocks
 tile.nurma.stone_polished.name=Polished Stone
 tile.nurma.grinder.name=Grindstone

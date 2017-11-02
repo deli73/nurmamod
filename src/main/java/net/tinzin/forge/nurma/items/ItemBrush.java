@@ -4,8 +4,6 @@ import net.minecraft.item.ItemStack;
 import net.tinzin.forge.nurma.Nurma;
 
 public class ItemBrush extends ItemBase {
-
-
     public ItemBrush() {
         super("brush", 1);
         this.setHasSubtypes(true);
@@ -14,7 +12,7 @@ public class ItemBrush extends ItemBase {
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
-        return "item." + Nurma.modId + "brush." + (stack.getMetadata() == 0 ? "dry" : "inked");
+        return "item." + Nurma.modId + ".brush." + (stack.getMetadata() == 0 ? "dry" : "inked");
     }
 
     @Override

@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "H ",
+        " S"
+    ],
+    "key": {
+        "S": {"item": "minecraft:stick"},
+        "H": {"item": "nurma:horsehair", "data": 32767}
+    },
+    "result":{"item": "nurma:brush", "data":0, "count":1}
+}
